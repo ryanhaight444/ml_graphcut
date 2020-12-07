@@ -1,0 +1,10 @@
+time python loops.py -i assets/marine_01-5s-150x100.mp4 --beta 10 -P 5 15 25 35 45
+time python loops.py -i assets/marine_01-5s-300x200.mp4 --small-time --beta 1000 -P 15 32 36 40
+
+# Using the new "theta" parameter
+python loops.py -i assets/marine_01-5s-300x200.mp4 -B 100 -P 32 36 --theta 0.5 -e 128_projected
+
+# Running with multiple processes (via MPI)
+# Ideally, it'd be good to match the cardinality of the periods with the number of processes, or have the
+#   later be a multiple of the former (e.g. 4 processes, 8 periods)
+mpirun -n 2 python mpi_loops.py -i assets/marine_01-5s-150x100.mp4 -B 100 -P 32 36 --small-size --small-time

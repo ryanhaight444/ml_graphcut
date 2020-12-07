@@ -1,0 +1,2 @@
+Need to set PATH to use ffmpeg on cluster:
+export PATH=$PATH:/home/strongn/.local/bin

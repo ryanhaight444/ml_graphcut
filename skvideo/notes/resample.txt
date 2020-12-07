@@ -1,0 +1,41 @@
+
+                          # new size # don't compress     # -an = remove audio
+ffmpeg -i input_video.mp4 -s 300x200 -c:v libx264 -crf 18 -an output_video.mp4
+
+
+
+
+# NOTES FROM THE DOCUMENTATION (https://ffmpeg.org/ffmpeg.html)
+
+-t duration (input/output)
+When used as an input option (before -i), limit the duration of data read from the input file.
+
+When used as an output option (before an output url), stop writing the output after its duration reaches duration.
+
+duration must be a time duration specification, see (ffmpeg-utils)the Time duration section in the ffmpeg-utils(1) manual.
+
+-to and -t are mutually exclusive and -t has priority.
+
+
+-to position (input/output)
+Stop writing the output or reading the input at position. position must be a time duration specification, see (ffmpeg-utils)the Time duration section in the ffmpeg-utils(1) manual.
+
+-to and -t are mutually exclusive and -t has priority.
+
+
+-ss position (input/output)
+When used as an input option (before -i), seeks in this input file to position. Note that in most formats it is not possible to seek exactly, so ffmpeg will seek to the closest seek point before position. When transcoding and -accurate_seek is enabled (the default), this extra segment between the seek point and position will be decoded and discarded. When doing stream copy or when -noaccurate_seek is used, it will be preserved.
+
+When used as an output option (before an output url), decodes but discards input until the timestamps reach position.
+
+position must be a time duration specification, see (ffmpeg-utils)the Time duration section in the ffmpeg-utils(1) manual.
+
+
+-sseof position (input)
+Like the -ss option but relative to the "end of file". That is negative values are earlier in the file, 0 is at EOF.
+
+
+
+# Crop
+
+ffmpeg -i GOPR7043.MP4 -filter:v "crop=3000:1000:900:400" -c:v libx264 -crf 18 out.mp4

@@ -1,0 +1,6 @@
+ffmpeg -ss 2 -i my-originals/00002.MTS -s 300x200 -c:v libx264 -crf 18 -an -filter:v fps=fps=30 -t 5s /projects/wehrresearch/ml_graphcut/assets/snow_02-300x200.mp4
+ffmpeg -ss 2 -i my-originals/00002.MTS -s 300x200 -c:v libx264 -crf 18 -an -filter:v fps=fps=30 -t 5s /projects/wehrresearch/ml_graphcut/assets/marine_02-300x200.mp4
+ffmpeg -ss 5 -i ../assets/new-gopro-untouched/GOPR7049.MP4 -s 960x540 -c:v libx264 -crf 18 -an -filter:v fps=fps=30 -t 5s /projects/wehrresearch/ml_graphcut/assets/recsnow_01-960x540.mp4
+ffmpeg -ss 5 -i ../assets/new-gopro-untouched/GOPR7049.MP4 -s 480x270 -c:v libx264 -crf 18 -an -filter:v fps=fps=30 -t 5s /projects/wehrresearch/ml_graphcut/assets/recsnow_01-480x270.mp4
+ffmpeg -ss 5 -i ../assets/new-gopro-untouched/GOPR7049.MP4 -s 320x180 -c:v libx264 -crf 18 -an -filter:v fps=fps=30 -t 5s /projects/wehrresearch/ml_graphcut/assets/recsnow_01-320x180.mp4
+ffmpeg -ss 0 -i /projects/wehrresearch/ml_graphcut/assets/fastloops/HDbrink2_orig.mp4 -s 320x180 -c:v libx264 -crf 18 -an -filter:v fps=fps=30 -t 5s -pix_fmt yuv420p /projects/wehrresearch/ml_graphcut/assets/brink2-320x180.mp4

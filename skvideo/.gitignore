@@ -1,0 +1,11 @@
+assets/
+results/
+output/
+misc/
+logs/
+junk/
+results_for_presentation/
+*.tsv
+*.csv
+*.npy
+*.zip

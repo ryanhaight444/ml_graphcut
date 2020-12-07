@@ -1,0 +1,7 @@
+OUTPUT_NAME="stream_output"
+STREAM_URL=""
+DURATION="00:01:00"
+
+streamlink --hls-duration $(DURATION) -o $(OUTPUT_NAME).ts $(STREAM_URL) best
+ffmpeg -i $(OUTPUT_NAME).ts -vcodec copy $(OUTPUT_NAME).mp4
+rm $(OUTPUT_NAME).ts

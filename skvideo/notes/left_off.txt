@@ -1,0 +1,7 @@
+Make sure that unary costs are being applied correctly.
+
+Could it be that our euclidean distance calculator doesn't work as expected?
+Check that method with the values we're using and make sure it's not off base.
+Perhaps the fact that we're using integer values in the Euclidean distance!
+-> Is that even the right calculator? Just write our own for ints right there
+
